@@ -64,7 +64,7 @@ import { lazy } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 
-const User = import("./pages/User");
+const User = lazy(() => import("./pages/User"));
 
 const filters = {
   parent: ["mom", "dad"], // allow enum values

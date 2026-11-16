@@ -176,7 +176,7 @@ export default createMiddleware({
 
 				if (
 					parsedOrigin.origin !== requestUrl.origin &&
-					!TRUSTED_ORIGINS.includes(parsedOrigin.host)
+					!TRUSTED_ORIGINS.includes(parsedOrigin.origin)
 				) {
 					return json({ error: "origin invalid" }, { status: 403 });
 				}
@@ -200,7 +200,7 @@ export default createMiddleware({
 
 				if (
 					parsedReferer.host !== requestUrl.host &&
-					!TRUSTED_ORIGINS.includes(parsedReferer.host)
+					!TRUSTED_ORIGINS.includes(parsedReferer.origin)
 				) {
 					return json({ error: "referer invalid" }, { status: 403 });
 				}

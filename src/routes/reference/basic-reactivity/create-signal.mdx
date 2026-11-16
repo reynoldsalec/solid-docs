@@ -77,7 +77,7 @@ It works only in development mode and is removed from the production bundle.
 #### `equals`
 
 - **Type:** `false | ((prev: T, next: T) => boolean)`
-- **Default:** `false`
+- **Default:** `(prev, next) => prev === next`
 
 A custom comparison function to determine when the signal should update.
 By default, signals use reference equality (`===`) to compare previous and next values.

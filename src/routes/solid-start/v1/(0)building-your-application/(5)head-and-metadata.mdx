@@ -46,7 +46,7 @@ export default function About() {
 ```
 
 These tags will be applied for that specific route only and will be removed from `document.head` once a user navigates away from the page.
-`routeData` can also be used here to create titles and SEO metadata that is specific to the dynamic parts of the route.
+Data loaded with `createAsync` can also be used here to create titles and SEO metadata that is specific to the dynamic parts of the route.
 
 ## Adding a site suffix in Title
 
@@ -92,7 +92,7 @@ export default function User(props: RouteSectionProps) {
 }
 ```
 
-For this example, `routeData` can be used to retrieve the user's name from the `id` in `/users/:id` and use it in the `Title` component.
+For this example, `createResource` is used to retrieve the user's name from the `id` in `/users/:id` and use it in the `Title` component.
 Similarly, other information can be used to build up other tags for SEO.
 
 ## Adding SEO tags

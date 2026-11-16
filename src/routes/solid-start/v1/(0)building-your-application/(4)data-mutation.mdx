@@ -29,7 +29,8 @@ const logoutAction = action(async () => {
 		name: "session",
 	});
 
-	if (session.data.sessionId) {
+	const sessionId = session.data.sessionId;
+	if (sessionId) {
 		await session.clear();
 		await db.session.delete({ id: sessionId });
 	}
@@ -84,7 +85,7 @@ export default function ProductDetail(props: RouteSectionProps) {
 
 	return (
 		<div>
-			<p>Current name: {props.data.product?.name}</p>
+			<p>Current name: {product()?.name}</p>
 			<form
 				action={updateProductAction.with(props.params.id as string)}
 				method="post"

@@ -395,7 +395,7 @@ setStore(
 	false
 );
 // equivalent to (but more efficient than):
-for (let i = 1; i <= store.users.length - 1; i += 2) {
+for (let i = 0; i <= store.users.length - 1; i += 2) {
 	setStore("users", i, "loggedIn", false);
 }
 ```

@@ -345,7 +345,8 @@ const logoutAction = action(async () => {
 		name: "session",
 	});
 
-	if (session.data.sessionId) {
+	const sessionId = session.data.sessionId;
+	if (sessionId) {
 		await session.clear();
 		await db.session.delete({ id: sessionId });
 	}
